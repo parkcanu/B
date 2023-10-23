@@ -1,0 +1,265 @@
+변수 명을 이미 있는 패키지나 함수 등으로 사용하게 된다면 원래의 의미와 이름을 잃으므로 조금이라도 다르게 선언해야 한다. 
+ex) Fatal - fatal
+
+
+키보드로 처음 입력받은 값은 문자열이다.
+
+-사용자가 값을 입력하고 엔터를 누를 때 추가되는 줄 바꿈 문자를 없애야 한다.
+-문자열을 부동 소수점 숫자 타입으로 변환해야 한다.
+
+--------------------------------------------------
+
+return 반환 값
+
+-함수 안에서 사용
+-마지막 값을 반환해주는 것
+-선언한 반환 타입과 반환 값의 타입은 같아야함
+
+--------------------------------------------------
+git init - 저장소 만들기 .git파일
+
+git pull
+
+git push origin main
+
+git push -u origin main
+
+git remote add origin site
+
+git remote set-url origin site
+
+git remote -v
+
+git status
+
+go run ./파일명
+
+go mod init 디렉터리명/
+
+go build ./파일명
+
+go fmt 
+
+go version
+
+ls
+	-a
+	-l
+	-al
+cd
+	-..
+pwd
+
+git add .
+
+git commit -m ""
+
+git config --global user.name
+
+git config --global user.email
+
+git config --global --list
+
+git log -- commit 과정
+
+echo
+
+echo " ">> ???
+
+cat ??? cat > 파일명
+
+git branch -m main
+
+mkdir
+
+rmdir
+
+git checkout
+--branch가 여러 개일 때 branch 바꿈
+
+--------------------------------
+
+사용자 지정 함수
+func <함수명>(매개변수명 매개변수타입) 리턴 타입{
+}
+
+->매개변수는 여러개 지정 가능
+
+
+
+사용자 지정 함수 네이밍 규칙
+
+-이름은 문자로 시작해야하며 임의 개수의 문자와 숫자로 구성될 수 있다.
+-함수명이 대문자로 시작하면 외부로 노출되어 외부 패키지에서 호출 가능
+-이름이 여러 단어 일 때는 캐멀
+
+
+----------------------------------
+
+package : 문자열 섲식 기능 모음이나 이미지 그리기 기능 모음과 같은 유사한 기능을 수행하는 코드
+
+import : 다른 패키지에 있는 코드를 사용하기 위해선 먼저 해당 패키지를 가져와야 한다
+-미사용 패키지를 불러오면 오류남!
+-패키지의 함수를 쓸 때
+ex) fmt.Println()으로 .을 붙여줌
+	--fmt -> format
+
+function : 코드의 어딘가에 호출할 수 있는 한 줄 이상의 코드로 이루어진 코드의 집합
+- first find main!
+
+세미콜론을 써도 괜찮고 안써도 괜찮다
+
+Println 출력 후 한 줄 넘어가기
+-괄호는 필수
+-하나 이상의 인자를 받을 수 있음 ","로 구분
+
+string : 텍스트 문자를 나타내는 일련의 바이트
+literal : 입력 값
+
+rune : 단일 문자를 나타내는데 사용, 유니코드, 문자를 입력하면 유니코드 문자 코드가 나옴
+
+boolean : true, false를 가지는 type
+
+비교 연산자 : 결과가 true, false로 나옴
+
+type이 바뀌면 에러 메세지가 뜬다. 
+-> go는 staticlly typed이기에 실행되기 전 값의 타입을 미리 알아낼 수 있고 함수는 특정 타입의 인자를 받고 특정 타입의 값을 반환
+
+append : append([]string{}, "Espanol")
+-> [espanol]
+---------------------------------------
+
+Type
+	-int
+	-int32
+	-float32
+	-float64
+		->완벽하지는 않지만 상당한 정밀도가 있음
+	-bool
+	-string
+
+---------------------------------------------------
+
+변수 선언
+
+var <variable name> <variable's type>
+
+or
+
+var <variable name> <variable's type> = <variable's result>
+
+or
+
+<variable> := variable's result
+-> 변수의 타입은 자동 지정
+
+-여러 개 나열 가능
+----------------------------------------------------------------
+
+zero value : 값을 할당하지 않고 선언한 변수
+
+Naming rule's
+-이름은 문자로 시작해야 하며 임의 개수의 문자와 숫자로 구성될 수 있음
+-대문자로 시작하면 외부로 노출되어 외부 패키지에서 접근 가능
+
+ Type Change
+-<변활할 타입>(변환값)
+ex) var myInt int = 2
+ float(myInt)
+
+-사용 할 때마다 변환해주고 사용해야함
+
+주석
+// 한 줄 주석
+/* */여러 줄 주석
+
+------------------------------------------------------------
+
+for x:=?; x>=?; x++{
+}
+
+continue
+
+break
+
+condition
+-------------------------------------------------------
+-if
+	if <conditional word> {}
+	-true인 경우 실행
+	-false면 실행하지 않음
+-----------------------------------------------------------------
+scope : 코드에서 변수가 보이는 (변수에 접근할 수 있는) 영역의 범위
+
+단축 변수 선언에서 변수는 단 한 번만 새로 선언된다.
+->  동일한 스코프에서 동일한 이름의 변수를 두 번 선언하면 컴파일 에러가 발생
+	->단축 변수 선언에서 하나 이상의 변수가 새로운 변수인 경우에는 가능
+
+----------------------------------------------
+printf : print, with formmatting
+Sprintf
+
+-형식동사
+ 문자열에 나타나는 대부분의 문자는 문자 그대로 출력 but 백분율 기호%로 시작하는 형식동사
+%f -> 여섯 번 째 자리
+%d
+%s
+%t (boolean)
+%v 값의 타입에 따라 적절히 형식화된 값
+%#v Go 프로그램 코드에 나타나는 그대로 형식화된 값
+%T 제공된 값의 타입
+%% 백분율 기호
+--------------------------
+함수 사용법
+ -> <package name>.<function name>
+
+메서드 사용법
+ -> <package name>.<function name>.<method>
+
+*함수 안에 함수 사용가능
+
+*호출한 함수로부터 결괏값을 반환받아야 하는 경우도 있기 때문에 대부분의 프로그래밍 언어에서 함수는 리턴 값, 함수를 호출한 호출자에게 반환하는 값을 가질 수 있다.
+ex) math.Floor, strings.Title
+
+package 
+-fmt
+	-Print -> 출력
+	-Println -> 출력 후 다음줄로
+	-Scan -> 정수 입력받음
+-strings
+	-Title -> 각 단어 첫번째 대문자로
+	-Replacer -> 바꿈
+		-Replace
+	-TrimSpace -> 필요 없는 줄 띄움 없애기
+-math
+	-Floor -> 내림
+	-Ceil -> 올림
+	-Round -> 반올림
+-reflect
+	-Typeof -> 타입
+-time
+	-Time -> 시간
+		-Year
+	-Now ->
+		-Unix
+-os
+	-Stdin -> 표준입력
+	-Open -> 열기
+	-create ->만들기
+		-Read
+		-Write
+	-exit -> 나가기
+-bufio
+	-Reader -> 문자열로 입력받기
+		-ReadString
+-log
+	-Fatal -> 오류 검출
+-append
+-strconv 
+	-ParseFloat -> float64로 바꿔줌
+	->strconv.ParseFloat(반환 문자열, 결괏값의 정밀도 비트 수)
+-math/rand
+	-Intn ->(?) 0부터 ?-1까지 중 하나
+	-Seed ->
+-errors
+	-New
